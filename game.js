@@ -8,12 +8,12 @@ let xpNeeded = 100;
 document.getElementById("money").innerText = money;
 
 const genres = [
-  "Action",
-  "Comedy",
-  "Horror",
-  "Drama",
-  "Romance",
-  "Sci-Fi"
+  { name: "Action", unlockLevel: 1 },
+  { name: "Comedy", unlockLevel: 1 },
+  { name: "Horror", unlockLevel: 1 },
+  { name: "Drama", unlockLevel: 1 },
+  { name: "Romance", unlockLevel: 2 },
+  { name: "Sci-Fi", unlockLevel: 3 }
 ];
 
 const locations = [
@@ -133,21 +133,32 @@ function createStudio() {
 /* ---------------- RENDER FUNCTIONS ---------------- */
 
 function renderGenres() {
-  const genreList = document.getElementById("genreList");
+
+  const genreList =
+    document.getElementById("genreList");
+
   genreList.innerHTML = "";
 
   genres.forEach((genre) => {
 
+    // LOCK CHECK
+    if (genre.unlockLevel && level < genre.unlockLevel) return;
+
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<h3>${genre}</h3>`;
+
+    card.innerHTML = `
+      <h3>${genre.name}</h3>
+    `;
 
     card.onclick = () => {
+
       document.querySelectorAll("#genreList .card")
         .forEach(c => c.classList.remove("selected"));
 
       card.classList.add("selected");
-      selectedGenre = genre;
+
+      selectedGenre = genre.name;
     };
 
     genreList.appendChild(card);
