@@ -325,3 +325,13 @@ button:hover {
   font-weight: bold;
   text-align: center;
 }
+
+.review-text {
+  font-style: italic;
+  font-size: 22px;
+
+  color: #ffd166;
+
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
