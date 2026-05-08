@@ -11,7 +11,9 @@
   <!-- STUDIO POPUP -->
   <div id="studioPopup" class="popup-overlay">
     <div class="popup">
+
       <h1>🎬 Create Your Studio</h1>
+
       <p>Every legendary film empire starts somewhere...</p>
 
       <input type="text" id="studioInput" placeholder="Studio Name">
@@ -19,18 +21,22 @@
       <button onclick="createStudio()">
         Start Studio
       </button>
+
     </div>
   </div>
 
   <!-- LEVEL UP POPUP -->
   <div id="levelPopup" class="popup-overlay hidden">
     <div class="popup">
+
       <h1>⭐ LEVEL UP!</h1>
+
       <div id="unlockContent"></div>
 
       <button onclick="closeLevelPopup()">
         Awesome!
       </button>
+
     </div>
   </div>
 
@@ -54,6 +60,7 @@
 
     <!-- XP SYSTEM -->
     <div class="xp-container">
+
       <div class="xp-bar">
         <div class="xp-fill" id="xpFill"></div>
       </div>
@@ -62,20 +69,6 @@
         Level <span id="level">1</span>
         —
         <span id="xpText">0 / 100 XP</span>
-      </p>
-    </div>
-
-    <!-- 🎬 FRANCHISE SYSTEM (NEW) -->
-    <div class="section">
-
-      <h2>🎥 Franchises</h2>
-
-      <div id="franchiseList" class="card-grid">
-        <p>No franchises yet...</p>
-      </div>
-
-      <p style="opacity: 0.7; font-size: 14px;">
-        Tip: Successful movies may automatically create franchises.
       </p>
 
     </div>
