@@ -93,11 +93,20 @@ let selectedTrailer = null;
 let selectedMarketing = null;
 
 function createStudio() {
-  const name = document.getElementById("studioInput").value;
 
-  if (name.trim() === "") return;
+  const name =
+    document.getElementById("studioInput").value;
 
-  document.getElementById("studioName").innerText = name;
+  if (name.trim() === "") {
+    alert("Please enter a studio name!");
+    return;
+  }
+
+  document.getElementById("studioName")
+    .innerText = name;
+
+  document.getElementById("studioPopup")
+    .style.display = "none";
 }
 
 function renderGenres() {
