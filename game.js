@@ -1,4 +1,5 @@
 let money = 30000;
+let releasedMovies = [];
 
 document.getElementById("money").innerText = money;
 
@@ -13,22 +14,22 @@ const genres = [
 
 const locations = [
   {
-    name: "New York",
+    name: "The Woods",
     cost: 8000,
     quality: 75,
-    image: "https://picsum.photos/300/200?1"
+    image: "https://images.squarespace-cdn.com/content/v1/505b9dd1e4b0dfa31206df7c/1441839752971-8U1Y590S24QABIWVEI9M/image-asset.jpeg"
   },
   {
-    name: "Haunted Mansion",
+    name: "City",
     cost: 12000,
     quality: 95,
-    image: "https://picsum.photos/300/200?2"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQByU--nRQd6IlgBoBKfFo61d-ljaKimZ9_gQ&s"
   },
   {
-    name: "Beach Resort",
+    name: "Green Screen",
     cost: 6000,
     quality: 60,
-    image: "https://picsum.photos/300/200?3"
+    image: "https://sparksarts.co.uk/wp-content/uploads/2023/10/Green-Screen.jpg"
   }
 ];
 
@@ -318,6 +319,19 @@ function releaseMovie(movieTitle) {
 
   updateMoney();
 
+  const movieData = {
+    title: movieTitle,
+    genre: selectedGenre,
+    actor: selectedActor.name,
+    location: selectedLocation.name,
+    score: score,
+    earnings: earnings
+  };
+
+  releasedMovies.push(movieData);
+
+  updateMovieHistory();
+
   document.getElementById("resultsSection")
     .classList.remove("hidden");
 
@@ -326,12 +340,48 @@ function releaseMovie(movieTitle) {
 
     <p>Genre: ${selectedGenre}</p>
 
+    <p>Lead Actor: ${selectedActor.name}</p>
+
+    <p>Filming Location: ${selectedLocation.name}</p>
+
     <p>Movie Score: ${score}</p>
 
     <p>Box Office Earnings: $${earnings}</p>
 
     <p>New Budget: $${money}</p>
   `;
+}
+
+function updateMovieHistory() {
+
+  const history =
+    document.getElementById("movieHistory");
+
+  history.innerHTML = "";
+
+  releasedMovies.forEach((movie) => {
+
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+    card.innerHTML = `
+      <h3>${movie.title}</h3>
+
+      <p>Genre: ${movie.genre}</p>
+
+      <p>Actor: ${movie.actor}</p>
+
+      <p>Location: ${movie.location}</p>
+
+      <p>Score: ${movie.score}</p>
+
+      <p>Earnings: $${movie.earnings}</p>
+    `;
+
+    history.appendChild(card);
+
+  });
 }
 
 function updateMoney() {
