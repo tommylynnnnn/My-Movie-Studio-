@@ -41,34 +41,48 @@ const locations = [
     quality: 98,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr3k98h6SlpaGuBXxJiB5P0BjMhiaaiSuT3A&s",
     unlockLevel: 2
+  },
+    {
+    name: "Space Ship Set",
+    cost: 300000,
+    quality: 85,
+    image: "https://www.peerspace.com/resources/wp-content/uploads/burbank-SCI-FI-spaceship-bunker-alien-futuristic-space-station-768x512.webp",
+    unlockLevel: 3
   }
 ];
 
 const actors = [
   {
-    name: "Scarlett Vale",
-    acting: 95,
+    name: "Angelina Molie",
+    acting: 85,
     popularity: 90,
     salary: 18000
   },
   {
-    name: "Tommy Blaze",
+    name: "Wayne 'the boulder' Johnson",
     acting: 70,
     popularity: 60,
     salary: 7000
   },
   {
-    name: "Emily Stone",
-    acting: 85,
-    popularity: 80,
+    name: "Gal Gabot",
+    acting: 20,
+    popularity: 100,
     salary: 12000
   },
   {
-    name: "Johnny Nova",
-    acting: 98,
+    name: "Bendaya",
+    acting: 77,
     popularity: 95,
     salary: 35000,
     unlockLevel: 2
+  },
+    {
+    name: "Robert Uppey Sr.",
+    acting: 87,
+    popularity: 95,
+    salary: 35000,
+    unlockLevel: 3
   }
 ];
 
