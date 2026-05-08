@@ -366,7 +366,11 @@ function releaseMovie(movieTitle) {
     selectedMarketing.boost +
     Math.floor(Math.random() * 50);
 
-  const earnings = score * 1000;
+  let earnings = score * 1000;
+ 
+  if (score < 180) {
+  earnings = -Math.floor(5000 + Math.random() * 10000);
+}
 
   const criticReview = getCriticReview(score);
 
